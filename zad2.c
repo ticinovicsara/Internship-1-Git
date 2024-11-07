@@ -8,7 +8,7 @@ void swap(int* a, int* b) {
 }
 
 void print_array(int* array, int n) {
-    for (int i = 0; i < n; i++) {
+    for (int i=0; i<n; i++) {
         printf("%d ", array[i]);
     }
     printf("\n");
@@ -19,7 +19,7 @@ void permutations(int* array, int start, int end) {
         print_array(array, end + 1);
     }
     else {
-        for (int i = start; i <= end; i++) {
+        for (int i=start; i <= end; i++) {
             swap(&array[start], &array[i]);
 
             permutations(array, start + 1, end);
@@ -35,13 +35,13 @@ int main() {
     scanf("%d", &n);
     int* array = (int*)malloc(n * sizeof(int));
 
-    for (int i = 0; i < n; i++) {
-        printf("Enter element %d: ", i + 1);
+    for (int i=0; i<n; i++) {
+        printf("Enter element %d: ", i+1);
         scanf("%d", &array[i]);
     }
 
     printf("Permutations are:\n");
-    permutations(array, 0, n - 1);
+    permutations(array, 0, n-1);
 
     free(array);
     return 0;
